@@ -1,0 +1,127 @@
+.profilEsas{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.containerProfile{
+    width: 75%;
+    height: 100%;
+    margin-top: 30px;
+}
+
+
+.profilTop{
+    /* background-color: red; */
+    justify-content: space-between;
+    display: flex;
+    width: 80%;
+    height: 230px;
+    margin-left: 80px;
+}
+
+
+.profilImgB{
+    margin: 30px 0px 0px 20px;
+    width: 22%;
+    height: 70%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profilImgB img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profileTextT{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 65%;
+    height: 100%;
+}
+
+.profileLeftTop{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.profileBtn{
+    transition: .5s;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius:7px;
+    background-color: #EFEFEF;
+}
+
+.profileBtn:hover{
+    background-color: #c5c1c1;
+}
+
+.profileLeftTop p{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.profileLeftTop svg{
+    cursor: pointer;
+}
+
+
+.follow{
+    gap: 30px;
+    display: flex;
+    align-items: center;
+    /* background-color: orange; */
+    width: 60%;
+    height: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+
+.follow span{
+    font-weight: 600;
+}
+
+.fontWeight{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.profilCenter{
+    width: 9.5%;
+    height: 100px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.profilCenterItem{
+    border:1px solid #ccc ;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+    width: 100%;
+    height: 90%;
+    background-color: #FAFAFA;
+}
+
+
+.profilCenter p{
+    margin-left: 78px;
+    font-weight:600 ;
+}
+
+.profilBottom{
+    width: 100%;
+    /* background-color: red; */
+    border-top: 1px solid #ccc;
+    margin-top: 70px;
+}

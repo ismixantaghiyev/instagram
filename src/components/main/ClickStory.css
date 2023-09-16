@@ -1,0 +1,131 @@
+.clickStory{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.952);
+    z-index: 111;
+    display: grid;
+    place-items: center;
+}
+
+.storyAbout{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+}
+
+.storyHeader{
+    padding: 0 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7%;
+}
+
+.storyHeaderImg{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.storyHeaderImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leftHeader{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.rightHearder{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.storyImg{
+    width: 100%;
+    height: 670px;
+}
+
+.storyImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.storyFooter{
+    
+    width: 100%;
+    height: 8%;
+    background-color: rgba(255, 255, 255, 0.114);
+    display: flex;
+    gap: 50px; 
+}
+
+.footerLeft{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    margin-left: 10px;
+}
+
+.footerRight{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.footerRight svg{
+    color: black;
+}
+
+
+.footerLeft input{
+    padding-left: 10px;
+    width: 100%;
+    height: 50%;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 20px;
+    background-color: transparent;
+}
+
+
+.closeStory{
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    font-size: 22px;
+    color: white;
+    z-index: 23212;
+}
+
+.iconsStory > div{
+    position: absolute;
+    z-index: 999;
+    top: 47%;
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.719);
+    cursor: pointer;
+}
+
+.storyIconLeft{
+    left: 33%;
+}
+
+.storyIconRight{
+    right: 33%;
+}

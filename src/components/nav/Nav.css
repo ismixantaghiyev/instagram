@@ -1,0 +1,87 @@
+.instagram {
+    display: flex;
+}
+
+.nav2 {
+    width: 20%;
+}
+
+.nav {
+    width: 16%;
+    height: 100vh;
+    padding: 40px 15px;
+    transition: 0.5s;
+    position: fixed;
+    z-index: 2;
+    background-color: #fffffc;   
+    border-right: 1px solid #dbdbd9;
+}
+.nav ul {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.logo {
+    padding-left: 8px;
+}
+
+.nav li {
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    transition: .5s;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.nav svg{
+    transition: .2s;
+}
+
+.nav li:hover {
+    background-color: #f2f2ef;
+    border-radius: 10px;
+    >svg{
+        transform: scale(1.1);
+    }
+}
+
+.navProfile:hover{
+    background-color: #f2f2ef;
+    border-radius: 10px;
+    > .navProfileImg{
+        transform: scale(1.1);
+    }
+}
+
+.nav li p {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navProfile{
+    transition: .5s;
+    padding:0 5px ;
+    display: flex;
+    width: auto;
+    gap: 10px;
+    margin-top: 10px;
+    > .navProfileImg {
+        transition: .5s;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        border: 1px solid #c0c0c0;
+        overflow: hidden;
+        >img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            }
+    }
+}

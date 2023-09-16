@@ -1,0 +1,9 @@
+.posts{
+    width: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+

@@ -1,0 +1,86 @@
+.post{
+    width: 80%;
+    /* height: 300px; */
+    margin: 0 auto;
+    /* border:1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    /* justify-content: center; */
+}
+
+.postItem{
+    width: 75%;
+    height: 600px;
+    margin-top: 20px;
+}
+
+.postHeader{
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0px;
+    align-items: center;
+}
+
+.postHeaderLeft{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.headersRight{
+    cursor: pointer;
+}
+
+.postHeaderProfilImg{
+    width: 30px;
+    height: 30px;
+    /* background-color: blue; */
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.postHeaderProfilImg img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.postImg{
+    height: 85%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.866);
+    display: flex;
+    justify-content: center;
+}
+
+.postImg img{
+    height: 100%;
+    margin: auto;
+    width: auto;
+    object-fit: contain;
+}
+
+.postFooter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    /* padding: 0px 10px; */
+}
+
+.postIcons{
+    display: flex;
+    gap: 10px;
+}
+
+.postIcons svg{
+    cursor: pointer;
+}
+
+.postKayded svg{
+    cursor: pointer;
+}
