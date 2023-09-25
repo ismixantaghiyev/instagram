@@ -10,5 +10,7 @@
     color: #737373;
 }
 .navProfil .active p{
-    color: red !important;
+    color: black;
+    font-weight: 600;
+    border-bottom: 1px solid black;
 }
