@@ -8,6 +8,10 @@ function Save() {
 
     return (
         <div className='save'>
+            <div className='saveFlex'>
+                <div className='firstP'>Only you can see what you've saved</div>
+                <div className='lastP'>+ New Collection</div>
+            </div>
             {saveBasket.map(item => <SaveItem {...item} />)}
         </div>
     )

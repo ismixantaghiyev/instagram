@@ -9,15 +9,15 @@ function App() {
   const [login, setLogin] = useState([])
   const [signTrue, setLoginTrue] = useState(false)
 
-  // useEffect(() => {
-  //   fetch("https://elmir-50255-default-rtdb.firebaseio.com/post.json")
-  //     .then(res => res.json())
-  //     .then(datas => {
-  //       setPostDatas(...postDatas, Object.values(datas))
-  //       setLoader(false)
-  //     }
-  //     )
-  // }, [])
+  useEffect(() => {
+    fetch("https://elmir-50255-default-rtdb.firebaseio.com/post.json")
+      .then(res => res.json())
+      .then(datas => {
+        setPostDatas(...postDatas, Object.values(datas))
+        setLoader(false)
+      }
+      )
+  }, [])
 
   // useEffect(() => {
   //   fetch("https://ismixan-6005b-default-rtdb.firebaseio.com/post.json")
@@ -29,7 +29,7 @@ function App() {
   // }, [])
 
 
-  
+
 
   const data = [
     {
