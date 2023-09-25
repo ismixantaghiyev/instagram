@@ -13,14 +13,14 @@ import SignUp from './components/Login_SignUP/SignUp/SignUp';
 function Rout({signTrue, setLoginTrue}) {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if(signTrue==true){
-      navigate('/login');
-    }
-    else{
-      navigate("/signup")
-    }
-  }, [signTrue]);
+  // useEffect(() => {
+  //   if(signTrue==true){
+  //     navigate('/login');
+  //   }
+  //   else{
+  //     navigate("/signup")
+  //   }
+  // }, [signTrue]);
 
   return (
     <div>
