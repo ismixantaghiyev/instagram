@@ -1,0 +1,10 @@
+.saveItem{
+    width: 32.98%;
+    height: 310px;
+}
+
+.saveItem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

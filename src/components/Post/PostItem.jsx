@@ -1,27 +1,39 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { BsThreeDots } from 'react-icons/bs';
+import { ContextData } from '../../App';
 
 
-function PostItem({ img, comment, name }) {
+function PostItem({ img, comment, name, id}) {
     const [hearth, sethearth] = useState(true)
-    const [kayd, setkayd] = useState(true)
-    const likes = () => {
-        sethearth(!hearth)
-    }
+    const [kayd, setkayd] = useState(false)
+    const { postDatas, loader, saveBasket, setSaveBasket } = useContext(ContextData)
 
-    const save = () => {
-        setkayd(!kayd)
+    const likes = () => {
+        sethearth(st => !st)
     }
+    const save = () => {
+        setkayd(st => !st)
+    }
+    useEffect(() => {
+        if (kayd) {
+            const findSave = postDatas.find(item => item.id == id)
+            setSaveBasket(st => [...st, findSave]);
+        }
+        else {
+            const filterDatas = saveBasket.filter(item => item.id !== id)
+            setSaveBasket(filterDatas)
+        }
+    }, [kayd])
     return (
-        <div style={{display:'flex',flexDirection:"column"}} className="postItem">
+        <div style={{ display: 'flex', flexDirection: "column" }} className="postItem">
             <div className="postHeader">
                 <div className="postHeaderLeft">
-                    <div className="postHeaderProfilImg"><img src='https:i.pinimg.com/236x/86/18/6f/86186f749b6ba5c82a676086c5229be2.jpg'/></div>
-                    <div className="postHeaderText" style={{fontWeight:'600'}} >{name}</div>
+                    <div className="postHeaderProfilImg"><img src='https:i.pinimg.com/236x/86/18/6f/86186f749b6ba5c82a676086c5229be2.jpg' /></div>
+                    <div className="postHeaderText" style={{ fontWeight: '600' }} >{name}</div>
                 </div>
                 <div className="headersRight"><BsThreeDots /></div>
             </div>
-            <div style={{borderRadius:'5px',overflow:'hidden'}} className="postImg">
+            <div style={{ borderRadius: '5px', overflow: 'hidden' }} className="postImg">
                 <img src={img} />
             </div>
             <div className="postFooter">
@@ -33,14 +45,14 @@ function PostItem({ img, comment, name }) {
                     <svg aria-label="Share Post" class="x1lliihq x1n2onr6" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Share Post</title><line fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2" x1="22" x2="9.218" y1="3" y2="10.083"></line><polygon fill="none" points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></polygon></svg>
                 </div>
                 <div onClick={save} className="postKayded">
-                    {kayd?<svg aria-label="Save" class="x1lliihq x1n2onr6" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Save</title><polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg>: <svg aria-label="Remove" class="x1lliihq x1n2onr6" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Remove</title><path d="M20 22a.999.999 0 0 1-.687-.273L12 14.815l-7.313 6.912A1 1 0 0 1 3 21V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1Z"></path></svg>}
+                    {kayd ? <svg aria-label="Remove" class="x1lliihq x1n2onr6" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Remove</title><path d="M20 22a.999.999 0 0 1-.687-.273L12 14.815l-7.313 6.912A1 1 0 0 1 3 21V3a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1Z"></path></svg> : <svg aria-label="Save" class="x1lliihq x1n2onr6" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Save</title><polygon fill="none" points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon></svg>}
                 </div>
             </div>
-            <div style={{display:"flex",gap:'5px',alignItems:'center'}} >
-                <p style={{fontWeight:'600',fontSize:'15px'}}>{name}</p>
-                <p style={{marginBottom:'2.5px'}} >{comment}</p>
-                </div>
-            <div style={{marginTop:'5px',color:'#737372',cursor:'pointer'}} >View all comments</div>
+            <div style={{ display: "flex", gap: '5px', alignItems: 'center' }} >
+                <p style={{ fontWeight: '600', fontSize: '15px' }}>{name}</p>
+                <p style={{ marginBottom: '2.5px' }} >{comment}</p>
+            </div>
+            <div style={{ marginTop: '5px', color: '#737372', cursor: 'pointer' }} >View all comments</div>
         </div>
     )
 }

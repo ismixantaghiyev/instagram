@@ -1,5 +1,7 @@
 import React from 'react'
 import "./Profile.css"
+import Logo from "../../images/profil.jpg"
+
 
 
 function Profile() {
@@ -8,7 +10,7 @@ function Profile() {
       <div className="profilContainer">
         <div className="profilItem">
           <div className="profilLeft">
-            <div className="profileimg"><img src="https:i.pinimg.com/236x/86/18/6f/86186f749b6ba5c82a676086c5229be2.jpg" /></div>
+            <div className="profileimg"><img src={Logo} /></div>
             <div className="profiletextAll">
               <div><p>tagiyevis</p></div>
               <div style={{ fontSize: "13px", color: "#676464" }}>Ismixan Tagiyev</div>

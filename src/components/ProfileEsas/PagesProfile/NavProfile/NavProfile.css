@@ -6,7 +6,9 @@
     align-items: center;
     font-size: 13px;
 }
-
-.active{
-    color: black;
+.navProfil p{
+    color: #737373;
+}
+.navProfil .active p{
+    color: red !important;
 }

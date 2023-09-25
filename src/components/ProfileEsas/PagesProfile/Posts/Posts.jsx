@@ -5,7 +5,6 @@ import { ContextData } from '../../../../App'
 
 function Posts() {
     const { data, loader } = useContext(ContextData)
-    console.log(data);
     return (
         <div className='posts'>
             {data.slice(0,6).map(item=><PostItemProfile {...item}/>)}

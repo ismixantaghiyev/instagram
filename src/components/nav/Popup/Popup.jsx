@@ -6,6 +6,7 @@ import { ContextData } from '../../../App';
 
 
 function Popup({ popup, setPopup }) {
+    useEffect(()=> window.scrollTo(0,0))
     // const { postDatas, setPostDatas } = useContext(ContextData)
     const [base64Img, setBase64img] = useState("")
     const [commentWidth, setCommentWidth] = useState(false)
@@ -54,12 +55,12 @@ function Popup({ popup, setPopup }) {
         setBase64img("")
         setCommentValue("")
 
-        fetch("https://instagram-9a517-default-rtdb.firebaseio.com/post.json", {
+        fetch("https://elmir-50255-default-rtdb.firebaseio.com/post.json", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ name: "tagiyevis", img: base64Img, comment: commentValue }),
+            body: JSON.stringify({ name: "tagiyevis", img: base64Img, comment: commentValue,id:Date.now() }),
         });
     }
 

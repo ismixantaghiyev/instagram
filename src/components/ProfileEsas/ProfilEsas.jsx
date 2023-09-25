@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./ProfilEsas.css"
 import { Outlet } from 'react-router-dom'
 import NavProfile from './PagesProfile/NavProfile/NavProfile'
+import Logo from "../../images/profil.jpg"
+
 
 function ProfilEsas() {
+    useEffect(()=> window.scrollTo(0,0))
     return (
         <>
             <div className='profilEsas'>
                 <div className="containerProfile">
                     <div className="profilTop">
-                        <div className="profilImgB"><img src="https:i.pinimg.com/236x/86/18/6f/86186f749b6ba5c82a676086c5229be2.jpg" /></div>
+                        <div className="profilImgB"><img src={Logo} /></div>
                         <div className="profileTextT">
                             <div className='profileLeftTop'>
                                 <div><p>tagiyevis</p></div>
