@@ -6,7 +6,7 @@ import { ContextData } from '../../App'
 function Explore() {
     const { data } = useContext(ContextData)
     useEffect(()=> window.scrollTo(0,0))
-
+// slkjfbajisbfashidbfk
 
     // const [exploreData, setExploreData] = useState([])
     // useEffect(() => {
