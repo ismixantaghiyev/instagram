@@ -36,11 +36,7 @@
     transition: .5s;
     font-size: 20px;
     margin-top: 5px;
-<<<<<<< HEAD
-    color: blue;
-=======
-    color: black;
->>>>>>> f31bf7fbf73ec96e52d8505286fd7359efd9dce8
+    color:blue;
 }
 
 .nav svg{
