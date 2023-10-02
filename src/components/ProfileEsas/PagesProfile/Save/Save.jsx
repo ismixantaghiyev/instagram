@@ -4,7 +4,7 @@ import SaveItem from './SaveItem/SaveItem'
 import { ContextData } from '../../../../App'
 
 function Save() {
-    const { saveBasket, setSaveBasket } = useContext(ContextData)
+    const { saveBasket } = useContext(ContextData)
 
     return (
         <div className='save'>

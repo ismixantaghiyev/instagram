@@ -11,7 +11,7 @@ import LogIn from './components/Login_SignUP/LogIn/LogIn';
 import SignUp from './components/Login_SignUP/SignUp/SignUp';
 
 function Rout({signTrue, setLoginTrue}) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // useEffect(() => {
   //   if(signTrue==true){

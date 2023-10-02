@@ -1,0 +1,93 @@
+.more{
+    width: 260px;
+    height: 50vh;
+    background-color: white;
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    z-index: 2;
+    /* display: flex !important; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.morePaddingCenter{
+    height: 2%;
+    width: 100%;
+    background-color: #F4F4F4;
+}
+
+.morePaddingBottom{
+    margin: 7px 0px 0px 13px;
+    width: 90%;
+    height: 23%;
+    /* background-color: red; */
+}
+
+
+.morePadding{
+    margin: 15px 0px 0px 13px;
+    width: 90%;
+    height: 65%;
+    /* background-color: red; */
+}
+
+.morePaddingBottom ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.morePaddingBottom ul li{
+    font-size: 17px;
+    padding: 10px;
+    transition: .2;
+    cursor: pointer;
+}
+
+.morePaddingBottom ul li span{
+    display: block;
+}
+
+
+.morePaddingBottom ul li:hover{
+    background-color: #f2f2ef;
+    border-radius: 10px;
+}
+
+.morePadding ul a{
+    color: black;
+}
+
+.morePadding ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.morePadding ul li{
+    font-size: 17px;
+    padding: 10px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.morePadding ul li svg{
+    margin-right: 10px;
+}
+
+.morePadding ul li span{
+    display: block;
+}
+
+.morePadding ul li div{
+    display: flex;
+    align-items: center;
+}
+
+.morePadding ul li:hover{
+    background-color: #f2f2ef;
+    border-radius: 10px;
+}

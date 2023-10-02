@@ -1,9 +1,21 @@
 .instagram {
     display: flex;
+    position: relative;
 }
 
 .nav2 {
     width: 20%;
+}
+
+.moress{
+    margin-top: 120px !important;
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.moress li{
+    width: 70%;
 }
 
 .nav {
@@ -16,7 +28,7 @@
     background-color: #fffffc;   
     border-right: 1px solid #dbdbd9;
 }
-.nav ul {
+.nav ul{
     margin-top: 25px;
     display: flex;
     flex-direction: column;

@@ -11,15 +11,16 @@
 }
 
 .storyAbout{
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 30%;
-    background-color: rgb(255, 255, 255);
+    background-color: #ccc;
 }
 
 .storyHeader{
-    padding: 0 5px;
+    padding: 0 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,6 +28,7 @@
 }
 
 .storyHeaderImg{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -47,26 +49,45 @@
 }
 
 .rightHearder{
+    box-shadow: rgba(0, 0, 0, 0.068) 0px 5px 15px;
     cursor: pointer;
     font-size: 20px;
 }
 
+.time{
+    z-index: 1;
+}
+
+.storyFooter{
+    position: absolute;
+    bottom: 0;
+    color: white;
+}
+
 .storyImg{
+    position: absolute;
     width: 100%;
-    height: 670px;
+    height: 790px;
+    top: 0px;
+    /* display: none; */
+}
+
+.storyHeader{
+    z-index: 11212;
+    color: white;
 }
 
 .storyImg img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    margin: 0 auto;
 }
 
 .storyFooter{
-    
     width: 100%;
     height: 8%;
-    background-color: rgba(255, 255, 255, 0.114);
+    /* background-color:rgba(255, 255, 255, 0.128); */
     display: flex;
     gap: 50px; 
 }
@@ -89,15 +110,18 @@
 }
 
 .footerRight svg{
-    color: black;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.094) 0px 5px 15px;
 }
 
 
 .footerLeft input{
+    caret-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding-left: 10px;
     width: 100%;
     height: 50%;
-    border: 1px solid black;
+    border: 1px solid white;
     outline: none;
     border-radius: 20px;
     background-color: transparent;
@@ -123,9 +147,9 @@
 }
 
 .storyIconLeft{
-    left: 33%;
+    left: -6%;
 }
 
 .storyIconRight{
-    right: 33%;
+    right: -6%;
 }

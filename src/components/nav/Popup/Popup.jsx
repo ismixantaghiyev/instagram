@@ -54,7 +54,6 @@ function Popup({ popup, setPopup }) {
         setCommentWidth(false)
         setBase64img("")
         setCommentValue("")
-
         fetch("https://elmir-50255-default-rtdb.firebaseio.com/post.json", {
             method: "POST",
             headers: {
