@@ -82,7 +82,7 @@ function SignUp() {
                         </form>
                     </div>
                     <div className='loginText'>
-                        <p>People who use our service may have uploaded your contact information to Instagram. <span> Learn More</span></p>
+                        <p>People who use our service may have uploaded your contact information to Instagram. <span className='learnMore'> Learn More</span></p>
                     </div>
                     <div className='loginText'>
                         <p>By signing up, you agree to our <span> Terms , Privacy Policy and Cookies Policy .</span></p>

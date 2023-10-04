@@ -15,7 +15,7 @@ function Post() {
                     size={35}
                 />
             </div>}
-            {postDatas.map(item => <PostItem key={item.id} {...item} />)}
+            {postDatas.reverse().map(item => <PostItem key={item.id} {...item} />)}
         </div>
     )
 }

@@ -156,6 +156,10 @@
 
 }
 
+.learnMore{
+    color: #0095F6;
+}
+
 .buttons{
     width: 100%;
     height: 12vh;
@@ -277,12 +281,12 @@
 }
 
 .labelSign2{
-    top: 50px;
+    top: 52px;
     left: 10px;
 }
 
 .labelSign3{
-    top: 92px;
+    top: 94px;
     left: 10px;
 }
 
