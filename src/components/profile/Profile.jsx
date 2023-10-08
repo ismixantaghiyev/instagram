@@ -1,19 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Profile.css"
-import Logo from "../../images/profil.jpg"
+import Logo from "../../images/Default_pfp.jpg"
+import { ContextData } from '../../App'
 
 
 
 function Profile() {
+  const { userInfo } = useContext(ContextData)
+
   return (
     <div className='profil'>
       <div className="profilContainer">
         <div className="profilItem">
           <div className="profilLeft">
-            <div className="profileimg"><img src={Logo} /></div>
+            <div className="profileimg"><img src={userInfo?.img?userInfo?.img:Logo}  /></div>
             <div className="profiletextAll">
-              <div><p>tagiyevis</p></div>
-              <div style={{ fontSize: "13px", color: "#676464" }}>Ismixan Tagiyev</div>
+              <div><p>{userInfo?.userName}</p></div>
+              <div style={{ fontSize: "13px", color: "#676464" }}>{userInfo?.fullName}</div>
             </div>
           </div>
           <div className="profilRight">Switch</div>

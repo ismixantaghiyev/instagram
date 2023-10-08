@@ -7,10 +7,8 @@ import ProfilEsas from './components/ProfileEsas/ProfilEsas';
 import Save from './components/ProfileEsas/PagesProfile/Save/Save';
 import Tagges from './components/ProfileEsas/PagesProfile/Tagges/Tagges';
 import Posts from './components/ProfileEsas/PagesProfile/Posts/Posts';
-import LogIn from './components/Login_SignUP/LogIn/LogIn';
-import SignUp from './components/Login_SignUP/SignUp/SignUp';
 
-function Rout({signTrue, setLoginTrue}) {
+function Rout({ signTrue, setLoginTrue }) {
   // const navigate = useNavigate();
 
   // useEffect(() => {
@@ -34,8 +32,7 @@ function Rout({signTrue, setLoginTrue}) {
             <Route path='tagges' element={<Tagges />} />
           </Route>
         </Route>
-          <Route path='login' element={<LogIn />} />
-          <Route path='signup' element={<SignUp />} />
+        {/* <Route path="/account" element={<Acount />}/> */}
       </Routes>
     </div>
   );
