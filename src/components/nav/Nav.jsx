@@ -11,9 +11,13 @@ function Nav() {
   const [show, setShow] = useState(false)
   const [popup, setPopup] = useState(false)
   const [notify, setnotify] = useState(false)
-  const [moreShow, setMoreShow] = useState(false)
+  const [moreShow, setMoreShow] = useState(true)
+  // console.log(moreShow);
 
-
+  const moreClick =()=>{
+    setMoreShow(!moreShow)
+    // console.log(moreShow);
+  }
   return (
     <>
       <div className='instagram'>
@@ -38,19 +42,18 @@ function Nav() {
                   {!show && !notify && <p style={{ color: 'black', fontWeight: '600' }} >Profile</p>}
                 </div>
               </Link>
-              <Link to="">
-                  <div onClick={()=>setMoreShow(!moreShow)} className='moress'>
+                  <div onClick={moreClick} className='moress'>
                     <li><svg aria-label="Settings" class="_ab6-" color="rgb(0, 0, 0)" fill="rgb(0, 0, 0)" height="24" role="img" viewBox="0 0 24 24" width="24"><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="3" x2="21" y1="4" y2="4"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="3" x2="21" y1="12" y2="12"></line><line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="3" x2="21" y1="20" y2="20"></line></svg>{!show && !notify && <span>More</span>}</li>
                   </div>
-              </Link>
             </ul>
+            <More moreShow={moreShow}/>
           </div>
-        <More moreShow={moreShow}/>
         </div>
         <Notifications notify={notify} />
         <Search show={show} />
         <Popup popup={popup} setPopup={setPopup} />
         <Outlet />
+        
       </div>
     </>
   )

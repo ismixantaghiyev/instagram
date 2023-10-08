@@ -1,10 +1,11 @@
 .instagram {
     display: flex;
-    position: relative;
+    /* position: relative; */
 }
 
 .nav2 {
     width: 20%;
+    position: relative;
 }
 
 .moress{

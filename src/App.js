@@ -10,7 +10,7 @@ function App() {
   const [signTrue, setLoginTrue] = useState(false)
 
   useEffect(() => {
-    fetch("https://elmir-50255-default-rtdb.firebaseio.com/post.json")
+    fetch("https://instagram-f60ce-default-rtdb.firebaseio.com/post.json")
       .then(res => res.json())
       .then(datas => {
         setPostDatas(...postDatas, Object.values(datas))
