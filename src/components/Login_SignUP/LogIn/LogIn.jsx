@@ -4,27 +4,33 @@ import logo from "../../../images/logo.png"
 import fb from "../../../images/fb.webp"
 import { Link } from 'react-router-dom'
 import { ContextData } from '../../../App'
-
-function LogIn() {
-    const [loginSuccess,setLoginSuccess] = useState(false)
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+function LogIn({changeAccount}) {
+    const [loginSuccess, setLoginSuccess] = useState(false)
     const [show, setShow] = useState(false)
     const [value, setValue] = useState("")
     const [valueName, setValueName] = useState("")
-    const {login} = useContext(ContextData)
-
-console.log(login.length, "salammm");
+    const { login } = useContext(ContextData)
 
 
     const loginPage = () => {
-        for (let i = 0; i < login.length; i++) {
-            console.log(valueName);
-            if (valueName == login[i].userName && value == login[i].password ) {
-                setLoginSuccess(true)
-                alert('hesaba giris olunur')
-                return
-            }
-        }
-        return alert('sifre ve ya parol sehvdir')
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, valueName, value)
+
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+            
+                // ...
+               localStorage.setItem('activeUser',user.reloadUserInfo.localId)
+
+                localStorage.setItem("user", true)
+                window.location.reload()
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+            });
     }
 
 
@@ -32,7 +38,7 @@ console.log(login.length, "salammm");
         setShow(!show)
     }
     return (
-        <div style={{height:"110vh", width:"100%"}}>
+        <div style={{ height: "110vh", width: "100%" }}>
             <div className='login'>
                 <div className="formLoginss">
                     <div className="logoLogin">
@@ -45,14 +51,14 @@ console.log(login.length, "salammm");
                     <div className='loginInput'>
                         <form action="">
                             <input className='input1' value={valueName} onChange={(e) => setValueName(e.target.value)} type="text" placeholder='' />
-                            <label className='label1'  htmlFor="">Phone number, username, or email</label>
+                            <label className='label1' htmlFor="">Phone number, username, or email</label>
                             <input className='input2' value={value} onChange={(e) => setValue(e.target.value)} type={show ? "text" : "password"} placeholder='' />
                             <label className='label2' htmlFor="">Password</label>
                             <p style={{ display: value == "" && "none" }} onClick={showInput} className='show'>{show ? "Hide" : "Show"}</p>
                         </form>
                     </div>
                     <div className="loginButton">
-                        <button onClick={loginPage} style={{ opacity: valueName && value.length > 5 ? "1" : "0.5"}}>Log in</button>
+                        <button onClick={loginPage} style={{ opacity: valueName && value.length > 5 ? "1" : "0.5" }}>Log in</button>
                     </div>
                     <div className='loginFlexOr'>
                         <div className='xettLogin'></div>
@@ -64,12 +70,12 @@ console.log(login.length, "salammm");
                         <div className="loginFbText">Log in with Facebook</div>
                     </div>
                     <div className='forget'>Forget password?</div>
-                    <div className="signupEq"><p>Don't have an account? <Link to="/login">Sign up</Link></p></div>
+                    <div className="signupEq"><p>Don't have an account? <span onClick={changeAccount} >Sign up</span></p></div>
                     <div className="buttons">
                         <div><p>Get the app.</p></div>
                         <div className='gogMicFlexLogin'>
-                            <div className="google"><img alt="Get it on Google Play" class="_aa5q" src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png" /></div>
-                            <div className="microsoft"><img alt="Get it from Microsoft" class="_aa5q" src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png" /></div>
+                            <div className="google"><img alt="Get it on Google Play" className="_aa5q" src="https://static.cdninstagram.com/rsrc.php/v3/yz/r/c5Rp7Ym-Klz.png" /></div>
+                            <div className="microsoft"><img alt="Get it from Microsoft" className="_aa5q" src="https://static.cdninstagram.com/rsrc.php/v3/yu/r/EHY6QnZYdNX.png" /></div>
                         </div>
                     </div>
                 </div>

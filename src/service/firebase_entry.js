@@ -1,16 +1,17 @@
-
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAh0qfUDyVvBrp-lvke3sc72njPQtLsWGI",
-  authDomain: "ismixan-6005b.firebaseapp.com",
-  databaseURL: "https://ismixan-6005b-default-rtdb.firebaseio.com",
-  projectId: "ismixan-6005b",
-  storageBucket: "ismixan-6005b.appspot.com",
-  messagingSenderId: "467461163304",
-  appId: "1:467461163304:web:35f0162d3160d9e05d281d",
-  measurementId: "G-1Q6MDJFTZW"
+  apiKey: "AIzaSyBlCnkCn3lovmav4BmQ86Dj6rNyb8vWr_Q",
+  authDomain: "instagram-152c4.firebaseapp.com",
+  projectId: "instagram-152c4",
+  storageBucket: "instagram-152c4.appspot.com",
+  messagingSenderId: "980981532517",
+  appId: "1:980981532517:web:9042475953bde01f03c38c"
 };
 
+// Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-export const auth = getAuth
