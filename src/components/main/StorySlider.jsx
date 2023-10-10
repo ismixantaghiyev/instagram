@@ -5,10 +5,11 @@ import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 import { ContextData } from '../../App';
 import Story from './Story';
 import ClickStory from './ClickStory';
+import Logo from '../../images/Default_pfp.jpg'
 
 
 function StorySlider() {
-    const { data } = useContext(ContextData)
+    const { data,postDatas } = useContext(ContextData)
     const [transform, setTransform] = useState(0)
     const [viewStory,setViewStory]=useState(false)
     const [story,setStory]=useState(null)
@@ -21,7 +22,7 @@ function StorySlider() {
             </div>
             <div className='slider'>
                 <div className="stories" style={{ transform: `translate(${transform}px)` }}>
-                    {data.map(item => <Story {...item} setStory={setStory} story={story} setViewStory={setViewStory} viewStory={viewStory}/>)}
+                    {postDatas.map(item =>item.map(item=><Story {...item} setStory={setStory} story={story} setViewStory={setViewStory} viewStory={viewStory}/>))}
                 </div>
             </div>
             { viewStory && <ClickStory setStory={setStory} story={story} setViewStory={setViewStory}/>}

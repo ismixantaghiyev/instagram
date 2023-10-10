@@ -104,7 +104,7 @@
 
 .formSignUp form input{
     height: 37px;
-    background-color: #FAFAFA;
+    background-color: transparent;
     border: 0.5px solid rgba(128, 128, 128, 0.418);
     outline-color: rgba(0, 0, 0, 0.347);
     padding-left: 8px;
@@ -149,7 +149,7 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.HaveAnAccount span a{
+.HaveAnAccount span{
     font-weight: 500;
     color: #0095F6;
     cursor: pointer;
@@ -158,6 +158,7 @@
 
 .learnMore{
     color: #0095F6;
+    cursor: pointer;
 }
 
 .buttons{
@@ -271,6 +272,7 @@
     transition: transform 0.2s ease-in-out;
     color: #737373;
     position: absolute;
+    z-index: -1;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 13px;
 }

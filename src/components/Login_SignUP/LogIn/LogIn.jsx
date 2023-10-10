@@ -5,7 +5,7 @@ import fb from "../../../images/fb.webp"
 import { Link } from 'react-router-dom'
 import { ContextData } from '../../../App'
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-function LogIn({changeAccount}) {
+function LogIn({ changeAccount }) {
     const [loginSuccess, setLoginSuccess] = useState(false)
     const [show, setShow] = useState(false)
     const [value, setValue] = useState("")
@@ -20,16 +20,17 @@ function LogIn({changeAccount}) {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-            
-                // ...
-               localStorage.setItem('activeUser',user.reloadUserInfo.localId)
+
+
+                localStorage.setItem('activeUser', user.reloadUserInfo.localId)
 
                 localStorage.setItem("user", true)
                 window.location.reload()
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
+                // const errorCode = error.code;
+                // const errorMessage = error.message;
+                alert("Istifadeci adi ve ya parol sehvdir!")
             });
     }
 
@@ -58,7 +59,7 @@ function LogIn({changeAccount}) {
                         </form>
                     </div>
                     <div className="loginButton">
-                        <button onClick={loginPage} style={{ opacity: valueName && value.length > 5 ? "1" : "0.5" }}>Log in</button>
+                        <button onClick={loginPage} style={{ opacity: valueName && value.length > 5 ? "1" : "0.5", pointerEvents: valueName && value.length > 5 ? "all" : "none" }}>Log in</button>
                     </div>
                     <div className='loginFlexOr'>
                         <div className='xettLogin'></div>

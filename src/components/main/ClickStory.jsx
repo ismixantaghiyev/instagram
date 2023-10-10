@@ -4,10 +4,11 @@ import { ContextData } from '../../App'
 import { BsThreeDots } from 'react-icons/bs';
 import { IoMdClose } from 'react-icons/io';
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs';
+import Logo from '../../images/Default_pfp.jpg'
 
 
 function ClickStory({ story, setStory, setViewStory }) {
-    const { data } = useContext(ContextData)
+    const { data,userInfo } = useContext(ContextData)
 
     const next = data.find(item => item.id == story?.id + 1)
     const left = data.find(item => item.id == story?.id - 1)
@@ -43,7 +44,7 @@ function ClickStory({ story, setStory, setViewStory }) {
                     <div className="time" style={{ width: `${time}%`, height: "3px", backgroundColor: "white" }}></div>
                     <div className="storyHeader">
                         <div className="leftHeader">
-                            <div className="storyHeaderImg"><img src={story?.img} /></div>
+                            <div className="storyHeaderImg"><img src={userInfo?.img?userInfo?.img:Logo} /></div>
                             <div className="storyHeaderText">{story?.name}</div>
                         </div>
                         <div className="rightHearder"><BsThreeDots /></div>
