@@ -3,9 +3,9 @@ import "./More.css"
 import { Link } from 'react-router-dom'
 
 function More({ moreShow }) {
-
+    console.log(moreShow);
     return (
-        <div style={{ display: moreShow ? "block" : "none" }} className='more'>
+        <div style={{ display: moreShow == true ? "block" : "none" }} className='more'>
             <div className="morePadding">
                 <ul>
                     <li>

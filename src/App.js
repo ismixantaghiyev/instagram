@@ -15,18 +15,11 @@ function App() {
   useEffect(() => {
     fetch("https://instagram-152c4-default-rtdb.firebaseio.com/users.json")
       .then((res) => res.json())
-      .then((datas) => {
-        setPostDatas(
-          ...postDatas,
-          Object.values(datas)
-            .map((item) =>
-              Object.values(item).filter((item) => typeof item === "object")
-            )
-            .filter((item) => item.length > 0)
-        );
-        setLoader(false);
-      });
-  }, []);
+      .then((datas) =>{ setPostDatas(...postDatas,Object.values(datas).map(item => Object.values(item).filter(item => typeof item === "object"  )).filter(item => item.length>0));
+      setLoader(false)})
+
+    }, []);
+
 
   useEffect(() => {
     if (activeUser) {
