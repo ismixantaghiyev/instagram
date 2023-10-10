@@ -36,7 +36,7 @@ function App() {
         .then((res) => res.json())
         .then((datas) => setUserInfo(datas));
     }
-  }, [activeUser]);
+  }, []);
 
   const objectsArray = Object.values(userInfo).filter(
     (item) => typeof item === "object"
