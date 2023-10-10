@@ -21,7 +21,6 @@ function LogIn({ changeAccount }) {
                 // Signed in 
                 const user = userCredential.user;
 
-
                 localStorage.setItem('activeUser', user.reloadUserInfo.localId)
 
                 localStorage.setItem("user", true)

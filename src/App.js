@@ -8,30 +8,45 @@ function App() {
   const [loader, setLoader] = useState(true);
   const [saveBasket, setSaveBasket] = useState([]);
   const [signTrue, setLoginTrue] = useState(false);
+  const [showAccount, setShowAccount] = useState(false);
 
   const [userInfo, setUserInfo] = useState([]);
-const activeUser=localStorage.getItem('activeUser');
+  const activeUser = localStorage.getItem("activeUser");
   useEffect(() => {
     fetch("https://instagram-152c4-default-rtdb.firebaseio.com/users.json")
       .then((res) => res.json())
-      .then((datas) =>{ setPostDatas(...postDatas,Object.values(datas).map(item => Object.values(item).filter(item => typeof item === "object"  )).filter(item => item.length>0));
-      setLoader(false)})
-  
-    }, []);
-
-  useEffect(() => {
-    fetch(`https://instagram-152c4-default-rtdb.firebaseio.com/users/${activeUser}.json`)
-      .then(res => res.json())
-      .then(datas =>setUserInfo(datas) );
+      .then((datas) => {
+        setPostDatas(
+          ...postDatas,
+          Object.values(datas)
+            .map((item) =>
+              Object.values(item).filter((item) => typeof item === "object")
+            )
+            .filter((item) => item.length > 0)
+        );
+        setLoader(false);
+      });
   }, []);
 
-  const objectsArray = Object.values(userInfo).filter(item => typeof item === "object");
+  useEffect(() => {
+    if (activeUser) {
+      fetch(
+        `https://instagram-152c4-default-rtdb.firebaseio.com/users/${activeUser}.json`
+      )
+        .then((res) => res.json())
+        .then((datas) => setUserInfo(datas));
+    }
+  }, [activeUser]);
 
+  const objectsArray = Object.values(userInfo).filter(
+    (item) => typeof item === "object"
+  );
 
-
-  const data = objectsArray
+  const data = objectsArray;
 
   const values = {
+    showAccount,
+    setShowAccount,
     data,
     postDatas,
     setPostDatas,
