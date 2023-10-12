@@ -147,7 +147,11 @@
 }
 
 .storyIconLeft{
-    left: -6%;
+    top: 10px;
+    left: 21%;
+    font-size: 150px !important;
+    color: red;
+    z-index: 12121212;
 }
 
 .storyIconRight{

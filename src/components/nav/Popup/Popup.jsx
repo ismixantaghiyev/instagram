@@ -14,7 +14,6 @@ function Popup({ popup, setPopup }) {
     const [commentValue, setCommentValue] = useState("")
     const inputRef = useRef()
     const { userInfo,activeUser } = useContext(ContextData)
-    console.log(userInfo);
 
 
     const selectFile = () => {

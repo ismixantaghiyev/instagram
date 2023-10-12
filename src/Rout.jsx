@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import Nav from './components/nav/Nav';
 import MainLayout from './components/mainLayout/MainLayout';
@@ -7,18 +7,9 @@ import ProfilEsas from './components/ProfileEsas/ProfilEsas';
 import Save from './components/ProfileEsas/PagesProfile/Save/Save';
 import Tagges from './components/ProfileEsas/PagesProfile/Tagges/Tagges';
 import Posts from './components/ProfileEsas/PagesProfile/Posts/Posts';
+import { ContextData } from './App';
 
 function Rout({ signTrue, setLoginTrue }) {
-  // const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   if(signTrue==true){
-  //     navigate('/login');
-  //   }
-  //   else{
-  //     navigate("/signup")
-  //   }
-  // }, [signTrue]);
 
   return (
     <div>

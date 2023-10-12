@@ -1,8 +1,11 @@
 import React from 'react'
+import { useContext} from 'react'
 import './Notifications.css'
 import { IoIosArrowForward } from 'react-icons/io';
+import { ContextData } from '../../../App';
 
 function Notifications({ notify }) {
+
     return (
         <div className='notify' style={{ transform: notify ? "translate(3%)" : "translate(-60%)", zIndex: notify ? "1" : "-1" }}>
             <div className='notifyTop'>
@@ -91,7 +94,7 @@ function Notifications({ notify }) {
                         <button>Delete</button>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     )

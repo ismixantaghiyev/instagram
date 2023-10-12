@@ -4,6 +4,7 @@ import Acount from "./components/Login_SignUP/Acount";
 
 export const ContextData = createContext();
 function App() {
+  // const [color, setColor] = useState()
   const [postDatas, setPostDatas] = useState([]);
   const [loader, setLoader] = useState(true);
   const [saveBasket, setSaveBasket] = useState([]);
@@ -50,8 +51,10 @@ function App() {
     signTrue,
     userInfo,
     activeUser,
+    
   };
   const user = localStorage.getItem("user");
+
   return (
     <ContextData.Provider value={values}>
       {user == "true" ? (

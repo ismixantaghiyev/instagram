@@ -20,7 +20,7 @@ function Nav() {
   return (
     <>
       <div className='instagram'>
-        <div className='nav2' >
+        <div className='nav2'>
           <div className="nav" style={{ width: show || notify ? "5%" : "16%", justifyContent: show || notify && "center" }}>
             <Link to="/">
               <div style={{ marginLeft: show && "-1.5px" }} className="logo">
