@@ -3,7 +3,11 @@ import "./More.css"
 import { Link } from 'react-router-dom'
 
 function More({ moreShow }) {
-    console.log(moreShow);
+
+    const logOut = () => {
+        localStorage.setItem("user", false)
+        window.location.reload()
+    }
     return (
         <div style={{ display: moreShow == true ? "block" : "none" }} className='more'>
             <div className="morePadding">
@@ -27,15 +31,14 @@ function More({ moreShow }) {
                     </li>
                 </ul>
             </div>
-            <div className="morePaddingCenter">
-            </div>
+            <div className="morePaddingCenter"></div>
             <div className="morePaddingBottom">
                 <ul>
                     <li>
                         <div><span>Switch accounts</span></div>
                     </li>
                     <li>
-                        <div><span>Log out</span></div>
+                        <div onClick={logOut}><span>Log out</span></div>
                     </li>
                 </ul>
             </div>

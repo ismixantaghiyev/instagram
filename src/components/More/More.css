@@ -1,10 +1,10 @@
 .more{
     width: 260px;
-    height: 58vh;
+    height: 50vh;
     background-color: white;
     position: absolute;
     left: 15px;
-    bottom: 100px;
+    bottom: 90px;
     z-index: 2;
     /* display: flex !important; */
     /* align-items: center; */
@@ -37,12 +37,12 @@
 .morePaddingBottom ul{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
 }
 
 .morePaddingBottom ul li{
     font-size: 17px;
-    padding: 10px;
+    padding: 11px;
     transition: .2;
     cursor: pointer;
 }
@@ -51,6 +51,9 @@
     display: block;
 }
 
+.morePaddingBottom ul li span::selection{
+    background-color: transparent;
+}
 
 .morePaddingBottom ul li:hover{
     background-color: #f2f2ef;
@@ -64,7 +67,7 @@
 .morePadding ul{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     margin-top: 0px;
 }
 
@@ -74,9 +77,10 @@
 
 .morePadding ul li{
     font-size: 17px;
-    padding: 10px;
+    padding: 13px;
     transition: .2s;
     cursor: pointer;
+    margin-top: 0px;
 }
 
 .morePadding ul li svg{
@@ -85,6 +89,11 @@
 
 .morePadding ul li span{
     display: block;
+    font-size: 14px;
+}
+
+.morePaddingBottom ul li span{
+    font-size: 14px;
 }
 
 .morePadding ul li div{
@@ -95,4 +104,8 @@
 .morePadding ul li:hover{
     background-color: #f2f2ef;
     border-radius: 10px;
+}
+
+.morePadding ul li span::selection{
+    background-color: transparent;
 }

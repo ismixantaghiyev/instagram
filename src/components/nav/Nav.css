@@ -1,6 +1,5 @@
 .instagram {
     display: flex;
-    /* position: relative; */
 }
 
 .nav2 {
@@ -17,6 +16,10 @@
 
 .moress li{
     width: 70%;
+}
+
+.moress li span::selection{
+    background-color: transparent;
 }
 
 .nav {
@@ -37,11 +40,12 @@
 }
 
 .logo {
-    padding-left: 8px;
+    padding: 0px 12px;
+    /* padding-left: 8px; */
 }
 
 .nav li {
-    padding: 10px 5px;
+    padding: 10px;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -80,7 +84,7 @@
 
 .navProfile{
     transition: .5s;
-    padding:0 5px ;
+    padding:10px !important;
     display: flex;
     width: auto;
     gap: 10px;
