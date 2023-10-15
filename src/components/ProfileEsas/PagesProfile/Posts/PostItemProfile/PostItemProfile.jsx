@@ -8,7 +8,7 @@ function PostItemProfile({ img, like, comment }) {
     return (
         <div className="profilItems">
             <img src={img} />
-            <div className="hover">
+            {/* <div className="hover">
                 <div style={{display:"flex", gap:"5px"}}>
                     <p><FcLike style={{fontSize:"18px"}}/></p>
                     <p>{like}</p>
@@ -17,7 +17,7 @@ function PostItemProfile({ img, like, comment }) {
                     <p><FaComment /></p>
                     <p>{comment}</p>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -6,15 +6,17 @@ import { Link } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getDatabase, ref, set } from 'firebase/database';
 import { app, firebase_entry } from '../../../service/firebase_entry';
-function SignUp({changeAccount}) {
+import { ContextData } from '../../../App';
+function SignUp({ changeAccount }) {
+    const { setShowAccount } = useContext(ContextData)
     const [loginInputs, setLoginInputs] = useState({
         email: "",
         fullName: "",
         userName: "",
         password: ""
     })
-    const database=getDatabase(app)
-
+    console.log(loginInputs, 'loginInputs');
+    const database = getDatabase(app)
     const signUps = () => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, loginInputs.email, loginInputs.password)
@@ -22,10 +24,11 @@ function SignUp({changeAccount}) {
                 // Signed up 
                 const user = userCredential.user;
                 // ...
-                set(ref(database,"users/"+user.uid),{
-                    userName:loginInputs.userName,
-                    email:loginInputs.email,
-                    fullName:loginInputs.fullName
+                set(ref(database, "users/" + user.uid), {
+                    userName: loginInputs.userName,
+                    email: loginInputs.email,
+                    fullName: loginInputs.fullName,
+                    profileImg:"" 
                 })
             })
             .catch((error) => {
@@ -33,8 +36,9 @@ function SignUp({changeAccount}) {
                 const errorMessage = error.message;
                 // ..
             });
-
-
+        if (loginInputs.email && loginInputs.userName && loginInputs.fullName && loginInputs.password) {
+            setShowAccount(false);
+        }
     }
 
     const [showSign, setShowSign] = useState(true)

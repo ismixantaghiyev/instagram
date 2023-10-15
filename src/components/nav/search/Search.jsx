@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Search.css'
+import { ContextData } from '../../../App'
 function Search({ show }) {
+
+    const { theme } = useContext(ContextData)
+
     return (
-        <div className='search' style={{ transform: show ? "translate(3%)" : "translate(-60%)", zIndex: show ? "1" : "-1" }}>
+        <div className='search' style={{ transform: show ? "translate(3%)" : "translate(-60%)", zIndex: show ? "1" : "-1" , color:theme.color, backgroundColor:theme.bgColor}}>
             <div className='searchTop'>
                 <h2>Search</h2>
                 <div>
-                    <input type="search" />
+                    <input style={{backgroundColor:theme.bgColor, border:`1px solid ${theme.color}` }} type="search" />
                 </div>
             </div>
             <div className='searchBottom'>

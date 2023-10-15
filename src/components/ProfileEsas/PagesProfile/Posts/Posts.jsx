@@ -7,7 +7,7 @@ function Posts() {
     const { data, loader } = useContext(ContextData)
     return (
         <div className='posts'>
-            {data.slice(0,6).map(item=><PostItemProfile {...item}/>)}
+            {data.map(item=><PostItemProfile {...item}/>)}
         </div>
     )
 }

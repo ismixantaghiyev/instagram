@@ -4,7 +4,14 @@ import Acount from "./components/Login_SignUP/Acount";
 
 export const ContextData = createContext();
 function App() {
-  // const [color, setColor] = useState()
+  const [theme, setTheme] = useState({
+    color: "#000000",
+    bgColor: "#fefff9",
+    bgPopup:"#262626"
+  });
+  const [hover, setHover] = useState(false)
+
+  const [darkClick, setDarkClick] = useState(false)
   const [postDatas, setPostDatas] = useState([]);
   const [loader, setLoader] = useState(true);
   const [saveBasket, setSaveBasket] = useState([]);
@@ -16,11 +23,18 @@ function App() {
   useEffect(() => {
     fetch("https://instagram-152c4-default-rtdb.firebaseio.com/users.json")
       .then((res) => res.json())
-      .then((datas) =>{ setPostDatas(...postDatas,Object.values(datas).map(item => Object.values(item).filter(item => typeof item === "object"  )).filter(item => item.length>0));
-      setLoader(false)})
-
-    }, []);
-
+      .then((datas) => {
+        setPostDatas(
+          ...postDatas,
+          Object.values(datas)
+            .map((item) =>
+              Object.values(item).filter((item) => typeof item === "object")
+            )
+            .filter((item) => item.length > 0)
+        );
+        setLoader(false);
+      });
+  }, []);
 
   useEffect(() => {
     if (activeUser) {
@@ -51,14 +65,19 @@ function App() {
     signTrue,
     userInfo,
     activeUser,
-    
+    theme,
+    setTheme,
+    darkClick,
+    setDarkClick, 
+    hover, 
+    setHover
   };
   const user = localStorage.getItem("user");
 
   return (
     <ContextData.Provider value={values}>
       {user == "true" ? (
-        <div>
+        <div style={{color:theme.color,backgroundColor:theme.bgColor}}>
           <Rout signTrue={signTrue} setLoginTrue={setLoginTrue} />
         </div>
       ) : (

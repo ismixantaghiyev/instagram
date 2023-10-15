@@ -5,9 +5,10 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { ContextData } from '../../../App';
 
 function Notifications({ notify }) {
+    const { theme } = useContext(ContextData)
 
     return (
-        <div className='notify' style={{ transform: notify ? "translate(3%)" : "translate(-60%)", zIndex: notify ? "1" : "-1" }}>
+        <div className='notify' style={{ transform: notify ? "translate(3%)" : "translate(-60%)", zIndex: notify ? "1" : "-1", color:theme.color, backgroundColor:theme.bgColor }}>
             <div className='notifyTop'>
                 <h2>Notifications</h2>
                 <div className='followTop'>

@@ -1,5 +1,4 @@
 .profilEsas{
-    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -7,7 +6,6 @@
 
 .containerProfile{
     width: 75%;
-    height: 100%;
     margin-top: 30px;
 }
 
@@ -44,7 +42,7 @@
     flex-direction: column;
     gap: 20px;
     width: 65%;
-    height: 100%;
+    /* height: 100%; */
 }
 
 .profileLeftTop{
@@ -60,7 +58,7 @@
     font-weight: 600;
     padding: 6px 16px;
     border-radius:7px;
-    background-color: #EFEFEF;
+    /* background-color: #EFEFEF; */
 }
 
 .profileBtn:hover{
@@ -82,7 +80,7 @@
     display: flex;
     align-items: center;
     width: 60%;
-    height: 30px;
+    /* height: 30px; */
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     
 }

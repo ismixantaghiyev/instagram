@@ -2,6 +2,7 @@
     width: 100%;
     /* background-color: aquamarine; */
     display: flex;
+    /* grid-template-columns: repeat(3, auto); */
     gap: 10px;
     flex-wrap: wrap;
     margin: 0 auto;
