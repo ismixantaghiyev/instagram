@@ -9,10 +9,10 @@ import Logo from '../../images/Default_pfp.jpg'
 
 
 function StorySlider() {
-    const { data,postDatas } = useContext(ContextData)
+    const { data, postDatas, dataStory } = useContext(ContextData)
     const [transform, setTransform] = useState(0)
-    const [viewStory,setViewStory]=useState(false)
-    const [story,setStory]=useState(null)
+    const [viewStory, setViewStory] = useState(false)
+    const [story, setStory] = useState("")
 
     return (
         <>
@@ -22,10 +22,10 @@ function StorySlider() {
             </div>
             <div className='slider'>
                 <div className="stories" style={{ transform: `translate(${transform}px)` }}>
-                    {postDatas.map(item =>item.map(item=><Story {...item} setStory={setStory} story={story} setViewStory={setViewStory} viewStory={viewStory}/>))}
+                    {dataStory.map(item => <Story {...item} story={story} setStory={setStory} setViewStory={setViewStory}/>)}
                 </div>
             </div>
-            { viewStory && <ClickStory setStory={setStory} story={story} setViewStory={setViewStory}/>}
+            {viewStory && <ClickStory story={story} setStory={setStory} setViewStory={setViewStory} />}
         </>
 
     )

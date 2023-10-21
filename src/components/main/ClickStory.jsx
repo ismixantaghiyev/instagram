@@ -8,10 +8,10 @@ import Logo from '../../images/Default_pfp.jpg'
 
 
 function ClickStory({ story, setStory, setViewStory }) {
-    const { data,userInfo } = useContext(ContextData)
+    const { data,dataStory } = useContext(ContextData)
 
-    const next = data.find(item => item.id == story?.id + 1)
-    const left = data.find(item => item.id == story?.id - 1)
+    const next = dataStory.find(item => item.id == story?.id + 1)
+    const left = dataStory.find(item => item.id == story?.id - 1)
 
     const storyLeftClick = () => {
         setStory(left)
@@ -44,7 +44,7 @@ function ClickStory({ story, setStory, setViewStory }) {
                     <div className="time" style={{ width: `${time}%`, height: "3px", backgroundColor: "white" }}></div>
                     <div className="storyHeader">
                         <div className="leftHeader">
-                            <div className="storyHeaderImg"><img src={userInfo?.img?userInfo?.img:Logo} /></div>
+                            <div className="storyHeaderImg"><img src={story?.img} /></div>
                             <div className="storyHeaderText">{story?.name}</div>
                         </div>
                         <div className="rightHearder"><BsThreeDots /></div>

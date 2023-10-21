@@ -44,7 +44,7 @@ function Nav() {
             <Link to="/profile">
               <div className="navProfile" style={{ cursor: 'pointer', padding: "10px 5px" }}>
                 <div  className='navProfileImg'  >
-                  <img src={userInfo?.img ? userInfo?.img : Logo} />
+                  <img src={userInfo?.profileImg ? userInfo.profileImg : Logo} />
                 </div>
                 {!show && !notify && <p style={{ color: theme.color, fontWeight: '600', }} >Profile</p>}
               </div>

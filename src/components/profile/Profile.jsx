@@ -6,14 +6,13 @@ import { ContextData } from '../../App'
 
 
 function Profile() {
-  const { userInfo } = useContext(ContextData)
-
+  const { userInfo,darkClick } = useContext(ContextData)
   return (
     <div className='profil'>
       <div className="profilContainer">
         <div className="profilItem">
           <div className="profilLeft">
-            <div className="profileimg"><img src={userInfo?.img?userInfo?.img:Logo}  /></div>
+            <div className="profileimg"><img src={userInfo?.profileImg ? userInfo?.profileImg : Logo} /></div>
             <div className="profiletextAll">
               <div><p>{userInfo?.userName}</p></div>
               <div style={{ fontSize: "13px", color: "#676464" }}>{userInfo?.fullName}</div>
@@ -23,7 +22,7 @@ function Profile() {
         </div>
         <div className="texttext">
           <div style={{ fontSize: "14px", fontWeight: "500", color: "#676464" }}>Suggested for you</div>
-          <div style={{ fontSize: "12px", fontWeight: "500",cursor:'pointer' }}>See All</div>
+          <div style={{ fontSize: "12px", fontWeight: "500", cursor: 'pointer' }}>See All</div>
         </div>
         <div className="profilItem">
           <div className="profilLeft">
@@ -65,7 +64,7 @@ function Profile() {
           </div>
           <div className="profilRight">Follow</div>
         </div>
-        <div className="profilItem">
+        {/* <div className="profilItem">
           <div className="profilLeft">
             <div className="profileimg"><img src="https://i.pinimg.com/236x/38/ba/35/38ba35c985363afa088c96b82a6d5f2a.jpg" /></div>
             <div className="profiletextAll">
@@ -74,8 +73,22 @@ function Profile() {
             </div>
           </div>
           <div className="profilRight">Follow</div>
+        </div> */}
+        <div style={{color: darkClick? "#676464":"#c0c0c0" }} className='profilNav'>
+          <ul>
+            <li>About</li>
+            <li>Help</li>
+            <li>Press</li>
+            <li>API</li>
+            <li>Jobs</li>
+            <li>Privacy</li>
+            <li>Terms</li>
+            <li>Locations</li>
+            <li>Language</li>
+            <li>Meta Verified</li>
+          </ul>
+          <p>© 2023 INSTAGRAM FROM META</p>
         </div>
-
       </div>
     </div>
   )

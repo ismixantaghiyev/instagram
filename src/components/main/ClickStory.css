@@ -148,8 +148,8 @@
 
 .storyIconLeft{
     top: 10px;
-    left: 21%;
-    font-size: 150px !important;
+    left: -6%;
+    /* font-size: 25px !important; */
     color: red;
     z-index: 12121212;
 }

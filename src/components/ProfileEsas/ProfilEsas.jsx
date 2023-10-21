@@ -22,19 +22,15 @@ function ProfilEsas() {
         if (file) {
             reader.readAsDataURL(file)
         }
-        // Kullanıcının verilerini alın
         fetch(`https://instagram-152c4-default-rtdb.firebaseio.com/users/${activeUser}.json`)
             .then((response) => response.json())
             .then((userData) => {
-                // Mevcut kullanıcı verilerini alın
                 let currentUserData = userData || {};
 
-                // Yeni profil fotoğrafını güncelleyin
                 currentUserData.profileImg = reader.result;
 
-                // Güncellenmiş kullanıcı verilerini kaydedin
                 fetch(`https://instagram-152c4-default-rtdb.firebaseio.com/users/${activeUser}.json`, {
-                    method: "PUT", // Kullanıcı verilerini güncellemek için PUT metodunu kullanabilirsiniz
+                    method: "PUT",
                     headers: {
                         "Content-Type": "application/json",
                     },
