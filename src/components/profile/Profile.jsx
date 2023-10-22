@@ -2,11 +2,12 @@ import React, { useContext } from 'react'
 import "./Profile.css"
 import Logo from "../../images/Default_pfp.jpg"
 import { ContextData } from '../../App'
+import { NavLink } from 'react-router-dom'
 
 
 
 function Profile() {
-  const { userInfo,darkClick } = useContext(ContextData)
+  const { userInfo, darkClick } = useContext(ContextData)
   return (
     <div className='profil'>
       <div className="profilContainer">
@@ -14,7 +15,9 @@ function Profile() {
           <div className="profilLeft">
             <div className="profileimg"><img src={userInfo?.profileImg ? userInfo?.profileImg : Logo} /></div>
             <div className="profiletextAll">
-              <div><p>{userInfo?.userName}</p></div>
+              <NavLink to="/profile">
+                <div><p>{userInfo?.userName}</p></div>
+              </NavLink>
               <div style={{ fontSize: "13px", color: "#676464" }}>{userInfo?.fullName}</div>
             </div>
           </div>
@@ -74,7 +77,7 @@ function Profile() {
           </div>
           <div className="profilRight">Follow</div>
         </div> */}
-        <div style={{color: darkClick? "#676464":"#c0c0c0" }} className='profilNav'>
+        <div style={{ color: darkClick ? "#676464" : "#c0c0c0" }} className='profilNav'>
           <ul>
             <li>About</li>
             <li>Help</li>

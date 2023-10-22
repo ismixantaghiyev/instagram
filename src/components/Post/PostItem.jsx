@@ -2,12 +2,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import { BsThreeDots } from 'react-icons/bs';
 import { ContextData } from '../../App';
 import Logo from '../../images/Default_pfp.jpg'
+import { NavLink } from 'react-router-dom';
 
 
 function PostItem({ img, comment, name, id }) {
     const [hearth, sethearth] = useState(true)
     const [kayd, setkayd] = useState(false)
-    const { postDatas, loader, saveBasket, setSaveBasket,userInfo,theme } = useContext(ContextData)
+    const { postDatas, loader, saveBasket, setSaveBasket, userInfo, theme } = useContext(ContextData)
 
     const likes = () => {
         sethearth(st => !st)
@@ -25,16 +26,21 @@ function PostItem({ img, comment, name, id }) {
             setSaveBasket(filterDatas)
         }
     }, [kayd])
+
+    const { darkClick } = useContext(ContextData)
+
     return (
         <div style={{ display: 'flex', flexDirection: "column" }} className="postItem">
             <div className="postHeader">
                 <div className="postHeaderLeft">
-                    <div className="postHeaderProfilImg"><img src={userInfo?.img?userInfo?.img:Logo} /></div>
-                    <div className="postHeaderText" style={{ fontWeight: '600' }} >{name}</div>
+                    <div className="postHeaderProfilImg"><img src={userInfo?.img ? userInfo?.img : Logo} /></div>
+                    <NavLink to="/profile">
+                        <div className="postHeaderText" style={{ fontWeight: '600' }} >{name}</div>
+                    </NavLink>
                 </div>
                 <div className="headersRight"><BsThreeDots /></div>
             </div>
-            <div style={{ borderRadius: '5px', overflow: 'hidden' }} className="postImg">
+            <div style={{ borderRadius: '5px', overflow: 'hidden', border:darkClick && "1px solid rgb(62, 62, 62)" }} className="postImg">
                 <img src={img} />
             </div>
             <div className="postFooter">

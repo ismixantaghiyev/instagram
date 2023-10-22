@@ -18,7 +18,7 @@ function LogIn({ changeAccount }) {
         signInWithEmailAndPassword(auth, valueName, value)
 
             .then((userCredential) => {
-                // Signed in 
+
                 const user = userCredential.user;
 
                 localStorage.setItem('activeUser', user.reloadUserInfo.localId)

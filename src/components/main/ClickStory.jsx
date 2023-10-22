@@ -37,7 +37,7 @@ function ClickStory({ story, setStory, setViewStory }) {
     return (
         <>
             <div onClick={() => setViewStory(false)} className="closeStory">
-                <IoMdClose />
+                <IoMdClose style={{cursor:"pointer"}}/>
             </div>
             <div className='clickStory' >
                 <div className="storyAbout">

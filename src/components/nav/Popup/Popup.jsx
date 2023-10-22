@@ -58,7 +58,7 @@ function Popup({ popup, setPopup }) {
         setCommentWidth(false)
         setBase64img("")
         setCommentValue("")
-        fetch(`https://instagram-152c4-default-rtdb.firebaseio.com/users/${activeUser}.json`, {
+        fetch(`https://instagram-152c4-default-rtdb.firebaseio.com/users/${activeUser}/post.json`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -74,7 +74,7 @@ function Popup({ popup, setPopup }) {
                     <IoMdClose />
                 </div>
             </div>
-            <div style={{ display: popup ? "block" : "none", width: commentWidth && "60%", left: commentWidth && "25%", color:theme.color, backgroundColor:theme.bgPopup }} className='createPost none'>
+            <div style={{ display: popup ? "block" : "none", width: commentWidth && "60%", left: commentWidth && "25%" }} className='createPost none'>
                 <div>
                     {base64Img ? <div className='textpopisi'>
                         <div onClick={iconsPost} className="iconPost"><BsArrowLeft /></div>

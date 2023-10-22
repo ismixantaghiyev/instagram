@@ -142,7 +142,7 @@
     z-index: 999;
     top: 47%;
     font-size: 25px;
-    color: rgba(255, 255, 255, 0.719);
+    /* color: rgba(255, 255, 255, 0.719); */
     cursor: pointer;
 }
 
@@ -150,10 +150,25 @@
     top: 10px;
     left: -6%;
     /* font-size: 25px !important; */
-    color: red;
     z-index: 12121212;
 }
 
 .storyIconRight{
     right: -6%;
+}
+
+.iconsStory{
+    color: #cccccc3e;
+}
+
+.storyImg::selection{
+    background-color: transparent;
+}
+
+.storyAbout:hover .storyIconLeft{
+    color: #b0aeae;
+}
+
+.storyAbout:hover .storyIconRight{
+    color: #b0aeae;
 }
