@@ -208,4 +208,40 @@ a{
     .profilItems{
         height: 120px !important;
     }
+    
+    .login{
+        width: 100% !important;
+    }
+
+    .microsoft{
+        width: 30% !important;
+    }
+
+    .google{
+        width: 30% !important;
+    }
+
+    .gooterLogin ul{
+        display: none !important;
+    }
+
+    .logoIns {
+        height: 10vh !important;
+    }
+
+    .formLoginss{
+        border: none !important;
+    }
+
+    .signUp{
+        width: 100% !important;
+    }
+
+    .footer ul{
+        display: none !important;
+    }
+
+    .form{
+        border: none !important;
+    }
 }
